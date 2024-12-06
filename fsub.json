@@ -1,0 +1,473 @@
+{
+    "log": {
+        "level": "warn",
+        "timestamp": true
+    },
+    "dns": {
+        "servers": [
+            {
+                "address": "https://8.8.8.8/dns-query",
+                "address_resolver": "dns-direct",
+                "strategy": "prefer_ipv4",
+                "detour": "✅ Selector",
+                "tag": "dns-remote"
+            },
+            {
+                "address": "8.8.8.8",
+                "strategy": "prefer_ipv4",
+                "detour": "direct",
+                "tag": "dns-direct"
+            },
+            {
+                "address": "rcode://success",
+                "tag": "dns-block"
+            },
+            {
+                "address": "fakeip",
+                "tag": "dns-fake"
+            }
+        ],
+        "rules": [
+            {
+                "domain": [
+                    "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev",
+                    "www.speedtest.net"
+                ],
+                "server": "dns-direct"
+            },
+            {
+                "clash_mode": "Direct",
+                "server": "dns-direct"
+            },
+            {
+                "clash_mode": "Global",
+                "server": "dns-remote"
+            },
+            {
+                "disable_cache": true,
+                "rule_set": [
+                    "geosite-malware",
+                    "geosite-phishing",
+                    "geosite-cryptominers"
+                ],
+                "server": "dns-block"
+            },
+            {
+                "disable_cache": true,
+                "inbound": "tun-in",
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "server": "dns-fake"
+            }
+        ],
+        "independent_cache": true,
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        }
+    },
+    "inbounds": [
+        {
+            "type": "direct",
+            "tag": "dns-in",
+            "listen": "0.0.0.0",
+            "listen_port": 6450,
+            "override_address": "1.1.1.1",
+            "override_port": 53
+        },
+        {
+            "type": "tun",
+            "tag": "tun-in",
+            "address": [
+                "172.18.0.1/28",
+                "fdfe:dcba:9876::1/126"
+            ],
+            "mtu": 9000,
+            "auto_route": true,
+            "strict_route": true,
+            "stack": "mixed",
+            "endpoint_independent_nat": true,
+            "sniff": true,
+            "sniff_override_destination": true
+        },
+        {
+            "type": "mixed",
+            "tag": "mixed-in",
+            "listen": "0.0.0.0",
+            "listen_port": 2080,
+            "sniff": true,
+            "sniff_override_destination": false
+        }
+    ],
+    "outbounds": [
+        {
+            "type": "selector",
+            "tag": "✅ Selector",
+            "outbounds": [
+                "💦 Best Ping 💥",
+                "💦 1 - VLESS F - Domain : 443",
+                "💦 2 - VLESS F - Domain : 443",
+                "💦 3 - VLESS F - IPv4 : 443",
+                "💦 4 - VLESS F - IPv4 : 443",
+                "💦 5 - VLESS F - IPv6 : 443",
+                "💦 6 - VLESS F - IPv6 : 443",
+                "💦 7 - VLESS F - Clean IP : 443"
+            ]
+        },
+        {
+            "type": "urltest",
+            "tag": "💦 Best Ping 💥",
+            "outbounds": [
+                "💦 1 - VLESS F - Domain : 443",
+                "💦 2 - VLESS F - Domain : 443",
+                "💦 3 - VLESS F - IPv4 : 443",
+                "💦 4 - VLESS F - IPv4 : 443",
+                "💦 5 - VLESS F - IPv6 : 443",
+                "💦 6 - VLESS F - IPv6 : 443",
+                "💦 7 - VLESS F - Clean IP : 443"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "30s"
+        },
+        {
+            "type": "direct",
+            "tag": "direct"
+        },
+        {
+            "type": "block",
+            "tag": "block"
+        },
+        {
+            "type": "dns",
+            "tag": "dns-out"
+        },
+        {
+            "type": "vless",
+            "server": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev",
+            "server_port": 443,
+            "domain_strategy": "prefer_ipv4",
+            "uuid": "9f51a433-2953-4239-b3a3-7102e8a09d31",
+            "tls": {
+                "alpn": "http/1.1",
+                "enabled": true,
+                "insecure": false,
+                "server_name": "01939C00-Cd54-7BFd-9924-B10f12B374ad.pAGeS.dEv",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "early_data_header_name": "Sec-WebSocket-Protocol",
+                "max_early_data": 2560,
+                "headers": {
+                    "Host": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev"
+                },
+                "path": "/auEbcrWqv0deHjGP/MjEyLjUwLjIzMS40Mg==",
+                "type": "ws"
+            },
+            "tag": "💦 1 - VLESS F - Domain : 443",
+            "tls_fragment": {
+                "enabled": true,
+                "size": "100-200",
+                "sleep": "1-1"
+            }
+        },
+        {
+            "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 443,
+            "domain_strategy": "prefer_ipv4",
+            "uuid": "9f51a433-2953-4239-b3a3-7102e8a09d31",
+            "tls": {
+                "alpn": "http/1.1",
+                "enabled": true,
+                "insecure": false,
+                "server_name": "01939c00-CD54-7BfD-9924-b10F12b374Ad.PAges.DeV",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "early_data_header_name": "Sec-WebSocket-Protocol",
+                "max_early_data": 2560,
+                "headers": {
+                    "Host": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev"
+                },
+                "path": "/ZOdxgEpbl65rvugF/MjEyLjUwLjIzMS40Mg==",
+                "type": "ws"
+            },
+            "tag": "💦 2 - VLESS F - Domain : 443",
+            "tls_fragment": {
+                "enabled": true,
+                "size": "100-200",
+                "sleep": "1-1"
+            }
+        },
+        {
+            "type": "vless",
+            "server": "172.66.47.137",
+            "server_port": 443,
+            "domain_strategy": "prefer_ipv4",
+            "uuid": "9f51a433-2953-4239-b3a3-7102e8a09d31",
+            "tls": {
+                "alpn": "http/1.1",
+                "enabled": true,
+                "insecure": false,
+                "server_name": "01939c00-cd54-7bfD-9924-b10f12b374AD.PaGeS.DEV",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "early_data_header_name": "Sec-WebSocket-Protocol",
+                "max_early_data": 2560,
+                "headers": {
+                    "Host": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev"
+                },
+                "path": "/sON0uw1pK1O1STD0/MjEyLjUwLjIzMS40Mg==",
+                "type": "ws"
+            },
+            "tag": "💦 3 - VLESS F - IPv4 : 443",
+            "tls_fragment": {
+                "enabled": true,
+                "size": "100-200",
+                "sleep": "1-1"
+            }
+        },
+        {
+            "type": "vless",
+            "server": "172.66.44.119",
+            "server_port": 443,
+            "domain_strategy": "prefer_ipv4",
+            "uuid": "9f51a433-2953-4239-b3a3-7102e8a09d31",
+            "tls": {
+                "alpn": "http/1.1",
+                "enabled": true,
+                "insecure": false,
+                "server_name": "01939c00-cd54-7BFd-9924-b10F12B374aD.PAGeS.DEV",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "early_data_header_name": "Sec-WebSocket-Protocol",
+                "max_early_data": 2560,
+                "headers": {
+                    "Host": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev"
+                },
+                "path": "/r1HMNehUkHx0JZG4/MjEyLjUwLjIzMS40Mg==",
+                "type": "ws"
+            },
+            "tag": "💦 4 - VLESS F - IPv4 : 443",
+            "tls_fragment": {
+                "enabled": true,
+                "size": "100-200",
+                "sleep": "1-1"
+            }
+        },
+        {
+            "type": "vless",
+            "server": "[2606:4700:310c::ac42:2f89]",
+            "server_port": 443,
+            "domain_strategy": "prefer_ipv4",
+            "uuid": "9f51a433-2953-4239-b3a3-7102e8a09d31",
+            "tls": {
+                "alpn": "http/1.1",
+                "enabled": true,
+                "insecure": false,
+                "server_name": "01939c00-cD54-7bFd-9924-B10f12B374ad.PaGES.deV",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "early_data_header_name": "Sec-WebSocket-Protocol",
+                "max_early_data": 2560,
+                "headers": {
+                    "Host": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev"
+                },
+                "path": "/P5nTYfnY2MO8IGCh/MjEyLjUwLjIzMS40Mg==",
+                "type": "ws"
+            },
+            "tag": "💦 5 - VLESS F - IPv6 : 443",
+            "tls_fragment": {
+                "enabled": true,
+                "size": "100-200",
+                "sleep": "1-1"
+            }
+        },
+        {
+            "type": "vless",
+            "server": "[2606:4700:310c::ac42:2c77]",
+            "server_port": 443,
+            "domain_strategy": "prefer_ipv4",
+            "uuid": "9f51a433-2953-4239-b3a3-7102e8a09d31",
+            "tls": {
+                "alpn": "http/1.1",
+                "enabled": true,
+                "insecure": false,
+                "server_name": "01939C00-CD54-7bfD-9924-B10f12b374ad.PAGEs.dEv",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "early_data_header_name": "Sec-WebSocket-Protocol",
+                "max_early_data": 2560,
+                "headers": {
+                    "Host": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev"
+                },
+                "path": "/cVE30CsxsXV4LPm3/MjEyLjUwLjIzMS40Mg==",
+                "type": "ws"
+            },
+            "tag": "💦 6 - VLESS F - IPv6 : 443",
+            "tls_fragment": {
+                "enabled": true,
+                "size": "100-200",
+                "sleep": "1-1"
+            }
+        },
+        {
+            "type": "vless",
+            "server": "173.245.58.238",
+            "server_port": 443,
+            "domain_strategy": "prefer_ipv4",
+            "uuid": "9f51a433-2953-4239-b3a3-7102e8a09d31",
+            "tls": {
+                "alpn": "http/1.1",
+                "enabled": true,
+                "insecure": false,
+                "server_name": "01939c00-Cd54-7bFd-9924-B10F12b374AD.PAges.dEv",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "early_data_header_name": "Sec-WebSocket-Protocol",
+                "max_early_data": 2560,
+                "headers": {
+                    "Host": "01939c00-cd54-7bfd-9924-b10f12b374ad.pages.dev"
+                },
+                "path": "/mhe1uoDRck4yxquB/MjEyLjUwLjIzMS40Mg==",
+                "type": "ws"
+            },
+            "tag": "💦 7 - VLESS F - Clean IP : 443",
+            "tls_fragment": {
+                "enabled": true,
+                "size": "100-200",
+                "sleep": "1-1"
+            }
+        }
+    ],
+    "route": {
+        "rules": [
+            {
+                "type": "logical",
+                "mode": "or",
+                "rules": [
+                    {
+                        "inbound": "dns-in"
+                    },
+                    {
+                        "network": "udp",
+                        "port": 53
+                    }
+                ],
+                "outbound": "dns-out"
+            },
+            {
+                "clash_mode": "Direct",
+                "outbound": "direct"
+            },
+            {
+                "clash_mode": "Global",
+                "outbound": "✅ Selector"
+            },
+            {
+                "rule_set": [
+                    "geosite-malware",
+                    "geosite-phishing",
+                    "geosite-cryptominers"
+                ],
+                "outbound": "block"
+            },
+            {
+                "rule_set": [
+                    "geoip-malware",
+                    "geoip-phishing"
+                ],
+                "outbound": "block"
+            }
+        ],
+        "rule_set": [
+            {
+                "type": "remote",
+                "tag": "geosite-malware",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-malware.srs",
+                "download_detour": "direct"
+            },
+            {
+                "type": "remote",
+                "tag": "geoip-malware",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geoip-malware.srs",
+                "download_detour": "direct"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-phishing",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-phishing.srs",
+                "download_detour": "direct"
+            },
+            {
+                "type": "remote",
+                "tag": "geoip-phishing",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geoip-phishing.srs",
+                "download_detour": "direct"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-cryptominers",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-cryptominers.srs",
+                "download_detour": "direct"
+            }
+        ],
+        "auto_detect_interface": true,
+        "override_android_vpn": true,
+        "final": "✅ Selector"
+    },
+    "ntp": {
+        "enabled": true,
+        "server": "time.apple.com",
+        "server_port": 123,
+        "detour": "direct",
+        "interval": "30m"
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "store_fakeip": true
+        },
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "external_ui": "ui",
+            "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+            "external_ui_download_detour": "direct",
+            "default_mode": "Rule"
+        }
+    }
+}
