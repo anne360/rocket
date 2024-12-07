@@ -322,7 +322,7 @@
             "server_port": 443,
             "uuid": "9698effa-9206-4fb9-aec2-f843f21b62b6",
             "tls": {
-                "alpn": "http/1.1",
+                "alpn": "h3",
                 "enabled": true,
                 "insecure": false,
                 "server_name": "stravhat-0191ea55-05a8-721e-b060-1f592998f3e3.pages.dev",
