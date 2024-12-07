@@ -320,7 +320,7 @@
             "type": "vless",
             "server": "173.245.58.238",
             "server_port": 443,
-            "uuid": "8193e880-475e-4cd4-b7db-a7240000760a",
+            "uuid": "9698effa-9206-4fb9-aec2-f843f21b62b6",
             "tls": {
                 "alpn": "http/1.1",
                 "enabled": true,
@@ -335,9 +335,9 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol",
                 "max_early_data": 2560,
                 "headers": {
-                    "Host": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev"
+                    "Host": "stravhat-0191ea55-05a8-721e-b060-1f592998f3e3.pages.dev"
                 },
-                "path": "/Oq9CaKpxhhMiiRHq/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
+                "path": "/?ed=2048",
                 "type": "ws"
             },
             "tag": "💦 7 - VLESS F - Clean IP : 443",
