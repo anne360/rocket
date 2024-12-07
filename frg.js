@@ -6,6 +6,10 @@ let FileName = 'CF-Workers-SUB';
 let SUBUpdateTime = 1; //自定义订阅更新时间，单位小时
 let total = 0;//TB
 let timestamp = 1736118642000;//2099-12-31
+let UD = Math.floor(((timestamp - Date.now())/timestamp * total * 1099511627776 )/2);
+		total = total * 1099511627776 ;
+		let expire= Math.floor(timestamp / 1000) ;
+		SUBUpdateTime = env.SUBUPTIME || SUBUpdateTime;
 {
     "log": {
         "level": "warn",
