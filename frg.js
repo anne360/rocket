@@ -1,3 +1,5 @@
+let total = 0;//TB
+let timestamp = 1736118642000;//2099-12-31
 {
     "log": {
         "level": "warn",
