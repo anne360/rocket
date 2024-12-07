@@ -325,7 +325,7 @@
                 "alpn": "http/1.1",
                 "enabled": true,
                 "insecure": false,
-                "server_name": "ParAsToO-rj-9B04a51a-Af99-4436-9D12-Ba6c6f3EEcc3.PaGES.DEv",
+                "server_name": "stravhat-0191ea55-05a8-721e-b060-1f592998f3e3.pages.dev",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "randomized"
