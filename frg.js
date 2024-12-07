@@ -94,26 +94,16 @@
             "tag": "proxy",
             "outbounds": [
                 "💦 Best Ping 💥",
-                "💦 1 - VLESS F - Domain : 443",
-                "💦 2 - VLESS F - Domain : 443",
-                "💦 3 - VLESS F - IPv4 : 443",
-                "💦 4 - VLESS F - IPv4 : 443",
-                "💦 5 - VLESS F - IPv6 : 443",
-                "💦 6 - VLESS F - IPv6 : 443",
-                "💦 7 - VLESS F - Clean IP : 443"
+                "Amir1991",
+                "Stravhat"
             ]
         },
         {
             "type": "urltest",
             "tag": "💦 Best Ping 💥",
             "outbounds": [
-                "💦 1 - VLESS F - Domain : 443",
-                "💦 2 - VLESS F - Domain : 443",
-                "💦 3 - VLESS F - IPv4 : 443",
-                "💦 4 - VLESS F - IPv4 : 443",
-                "💦 5 - VLESS F - IPv6 : 443",
-                "💦 6 - VLESS F - IPv6 : 443",
-                "💦 7 - VLESS F - Clean IP : 443"
+                "Amir1991",
+                "Stravhat"
             ],
             "url": "https://www.gstatic.com/generate_204",
             "interval": "30s"
