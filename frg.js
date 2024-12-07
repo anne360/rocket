@@ -132,161 +132,6 @@
         },
         {
             "type": "vless",
-            "server": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev",
-            "server_port": 443,
-            "uuid": "8193e880-475e-4cd4-b7db-a7240000760a",
-            "tls": {
-                "alpn": "http/1.1",
-                "enabled": true,
-                "insecure": false,
-                "server_name": "PArAStoo-RJ-9b04A51a-aF99-4436-9d12-ba6C6F3EeCc3.PaGeS.Dev",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
-                }
-            },
-            "transport": {
-                "early_data_header_name": "Sec-WebSocket-Protocol",
-                "max_early_data": 2560,
-                "headers": {
-                    "Host": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev"
-                },
-                "path": "/K2S26Xi9AGRS9CRt/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
-                "type": "ws"
-            },
-            "tag": "💦 1 - VLESS F - Domain : 443",
-            "tls_fragment": {
-                "enabled": true,
-                "size": "100-200",
-                "sleep": "1-1"
-            }
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 443,
-            "uuid": "8193e880-475e-4cd4-b7db-a7240000760a",
-            "tls": {
-                "alpn": "http/1.1",
-                "enabled": true,
-                "insecure": false,
-                "server_name": "pArASTOO-rJ-9b04a51a-aF99-4436-9D12-Ba6c6f3EECc3.paGes.dEv",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
-                }
-            },
-            "transport": {
-                "early_data_header_name": "Sec-WebSocket-Protocol",
-                "max_early_data": 2560,
-                "headers": {
-                    "Host": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev"
-                },
-                "path": "/gAUAyiAHJXwUpIdC/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
-                "type": "ws"
-            },
-            "tag": "💦 2 - VLESS F - Domain : 443",
-            "tls_fragment": {
-                "enabled": true,
-                "size": "100-200",
-                "sleep": "1-1"
-            }
-        },
-        {
-            "type": "vless",
-            "server": "172.66.44.61",
-            "server_port": 443,
-            "uuid": "8193e880-475e-4cd4-b7db-a7240000760a",
-            "tls": {
-                "alpn": "http/1.1",
-                "enabled": true,
-                "insecure": false,
-                "server_name": "PaRaStOo-RJ-9b04A51A-aF99-4436-9D12-bA6C6f3EECc3.paGEs.dEv",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
-                }
-            },
-            "transport": {
-                "early_data_header_name": "Sec-WebSocket-Protocol",
-                "max_early_data": 2560,
-                "headers": {
-                    "Host": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev"
-                },
-                "path": "/L3glVfBC7Cl8yRDb/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
-                "type": "ws"
-            },
-            "tag": "💦 3 - VLESS F - IPv4 : 443",
-            "tls_fragment": {
-                "enabled": true,
-                "size": "100-200",
-                "sleep": "1-1"
-            }
-        },
-        {
-            "type": "vless",
-            "server": "172.66.47.195",
-            "server_port": 443,
-            "uuid": "8193e880-475e-4cd4-b7db-a7240000760a",
-            "tls": {
-                "alpn": "http/1.1",
-                "enabled": true,
-                "insecure": false,
-                "server_name": "PArAstoo-RJ-9B04a51A-af99-4436-9D12-ba6C6F3EeCc3.PaGes.dEv",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
-                }
-            },
-            "transport": {
-                "early_data_header_name": "Sec-WebSocket-Protocol",
-                "max_early_data": 2560,
-                "headers": {
-                    "Host": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev"
-                },
-                "path": "/llO9HTAJeJSQKUWr/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
-                "type": "ws"
-            },
-            "tag": "💦 4 - VLESS F - IPv4 : 443",
-            "tls_fragment": {
-                "enabled": true,
-                "size": "100-200",
-                "sleep": "1-1"
-            }
-        },
-        {
-            "type": "vless",
-            "server": "[2606:4700:310c::ac42:2c3d]",
-            "server_port": 443,
-            "uuid": "8193e880-475e-4cd4-b7db-a7240000760a",
-            "tls": {
-                "alpn": "http/1.1",
-                "enabled": true,
-                "insecure": false,
-                "server_name": "PArasToO-rj-9B04A51a-Af99-4436-9D12-Ba6C6f3eECc3.paGes.dEv",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
-                }
-            },
-            "transport": {
-                "early_data_header_name": "Sec-WebSocket-Protocol",
-                "max_early_data": 2560,
-                "headers": {
-                    "Host": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev"
-                },
-                "path": "/3qzxRnvhouEvkgSV/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
-                "type": "ws"
-            },
-            "tag": "💦 5 - VLESS F - IPv6 : 443",
-            "tls_fragment": {
-                "enabled": true,
-                "size": "100-200",
-                "sleep": "1-1"
-            }
-        },
-        {
-            "type": "vless",
             "server": "173.245.58.238",
             "server_port": 443,
             "uuid": "4d17d0c7-6e8f-4bca-a46b-e19567305451",
@@ -309,7 +154,7 @@
                 "path": "/QE3Lg93TUnR4H7kK/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
                 "type": "ws"
             },
-            "tag": "💦 6 - VLESS F - IPv6 : 443",
+            "tag": "Amir1991",
             "tls_fragment": {
                 "enabled": true,
                 "size": "100-200",
@@ -340,7 +185,7 @@
                 "path": "/?ed=2048",
                 "type": "ws"
             },
-            "tag": "💦 7 - VLESS F - Clean IP : 443",
+            "tag": "Stravhat",
             "tls_fragment": {
                 "enabled": true,
                 "size": "100-200",
