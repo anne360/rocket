@@ -287,14 +287,14 @@
         },
         {
             "type": "vless",
-            "server": "[2606:4700:310c::ac42:2fc3]",
+            "server": "173.245.58.238",
             "server_port": 443,
-            "uuid": "8193e880-475e-4cd4-b7db-a7240000760a",
+            "uuid": "4d17d0c7-6e8f-4bca-a46b-e19567305451",
             "tls": {
                 "alpn": "http/1.1",
                 "enabled": true,
                 "insecure": false,
-                "server_name": "PaRASTOo-rj-9b04A51a-Af99-4436-9d12-ba6c6F3eecC3.pagES.DEV",
+                "server_name": "amir-ho1991-0192f481-92b2-7a27-a205-17617a867748.pages.dev",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "randomized"
@@ -304,7 +304,7 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol",
                 "max_early_data": 2560,
                 "headers": {
-                    "Host": "parastoo-rj-9b04a51a-af99-4436-9d12-ba6c6f3eecc3.pages.dev"
+                    "Host": "amir-ho1991-0192f481-92b2-7a27-a205-17617a867748.pages.dev"
                 },
                 "path": "/QE3Lg93TUnR4H7kK/cHJveHlpcC51cy5ody4wOTAyMjcueHl6",
                 "type": "ws"
